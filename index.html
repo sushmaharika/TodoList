@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-box">
+        <header>
+        <h1 class="todo-heading">
+            <span class="tick-icon" aria-hidden="true"></span>
+            Todo List
+        </h1>
+        <label class="switch" title="Toggle Theme">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+    </header>
+        <section class="add-task-area">
+            <form id="add-task-form">
+                <div class="input-group">
+                    <label for="task-title">Task Title:</label>
+                    <input type="text" id="task-title" placeholder="Add tasks Title and info" required>
+                </div>
+                <div class="input-group">
+                    <label for="task-priority">Priority:</label>
+                    <select id="task-priority">
+                        <option value="High">High</option>
+                        <option value="Medium" selected>Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="task-deadline">Deadline:</label>
+                    <input type="date" id="task-deadline" required>
+                </div>
+                <button type="submit" class="btn add-btn">Add Task</button>
+            </form>
+        </section>
+
+        <section class="filter-sort-area">
+            <div class="options">
+                <div class="input-group">
+                    <label for="filter-status">Status</label>
+                    <select id="filter-status">
+                        <option value="all">All</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="filter-priority">Priority</label>
+                    <select id="filter-priority">
+                        <option value="all">All Priorities</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="sort-tasks">Sort by</label>
+                    <select id="sort-tasks">
+                        <option value="deadline">Deadline</option>
+                        <option value="priority">Priority</option>
+                        <option value="added">Date Added</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="show-tasks-area">
+            <div id="task-list" class="task-list">
+            </div>
+        </section>
+    </div>
+    <div id="edit-modal" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" title="Close">×</span>
+            <h2>Edit Task</h2>
+            <form id="edit-task-form">
+                <input type="hidden" id="edit-task-id">
+                <div class="input-group">
+                    <label for="edit-task-title">Task Title:</label>
+                    <input type="text" id="edit-task-title" required>
+                </div>
+                <div class="input-group">
+                    <label for="edit-task-priority">Priority:</label>
+                    <select id="edit-task-priority">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="edit-task-deadline">Deadline:</label>
+                    <input type="date" id="edit-task-deadline" required>
+                </div>
+                <button type="submit" class="btn save-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
